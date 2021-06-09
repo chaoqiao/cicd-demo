@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('Test'){
       steps{
-        echo ${env.BUILD_NAME}
+	sh 'ls -al'
       }
     }
   }
