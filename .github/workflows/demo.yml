@@ -12,7 +12,7 @@ jobs:
           cat /etc/lsb-release
       - name: scm checkout
         uses: actions/checkout@v3
-      - name: setup python environment
+      - name: setup python 3.7 for x64
         uses: actions/setup-python@v3
         with:
           python-version: '3.7'
@@ -28,6 +28,8 @@ jobs:
       - name: check os verison
         run: |
           systeminfo
+      - name: scm checkout
+        uses: actions/checkout@v3
       - name: Set up JDK 11 for x64
         uses:  actions/setup-java@v3
         with:
