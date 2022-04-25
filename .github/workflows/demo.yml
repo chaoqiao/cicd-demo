@@ -35,7 +35,7 @@ jobs:
           distribution: 'adopt'
           architecture: x64
       - name: build with maven
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn -f demo/pom.xml --batch-mode --update-snapshots package
   GitHub-Actions-Job3:
     runs-on: macos-latest
     steps:
