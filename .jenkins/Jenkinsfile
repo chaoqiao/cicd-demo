@@ -1,9 +1,18 @@
+def a = "aaa"
+
 pipeline{
   agent any
+  environment {
+    a = "bbb"
+  }
   stages{
     stage('Test'){
       steps{
-	      sh 'ls -al'
+	      sh """
+          echo $a
+          echo ${a}
+          echo ${env.a}
+        """
       }
     }
   }
