@@ -13,7 +13,6 @@ pipeline {
           echo ${a}
           echo ${env.a}
           echo ${env.BRANCH_NAME}
-          echo ${BRANCH_NAME}
         """
       }
     }
