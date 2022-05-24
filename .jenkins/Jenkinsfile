@@ -1,17 +1,19 @@
 def a = "aaa"
 
-pipeline{
+pipeline {
   agent any
   environment {
     a = "bbb"
   }
   stages{
-    stage('Test'){
+    stage('Test') {
       steps{
 	      sh """
           echo $a
           echo ${a}
           echo ${env.a}
+          echo ${env.BRANCH_NAME}
+          echo ${BRANCH_NAME}
         """
       }
     }
