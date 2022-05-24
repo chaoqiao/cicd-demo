@@ -1,5 +1,9 @@
 def a = "aaa"
 
+def getGitBranchName() {
+    return scm.branches[0].name
+}
+
 pipeline {
   agent any
   environment {
@@ -8,11 +12,15 @@ pipeline {
   stages{
     stage('Test') {
       steps{
+        script {
+          def env=getGitBranchName()
+        }
 	      sh """
           echo $a
           echo ${a}
           echo ${env.a}
           echo ${env.BRANCH_NAME}
+          echo ${env}
         """
       }
     }
